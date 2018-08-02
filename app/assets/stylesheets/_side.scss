@@ -1,0 +1,67 @@
+.notice {
+    color: WhiteColor;
+    background-color: #38AEF0;
+    text-align: center;
+}
+.side {
+    height: 100vh;
+    width: 300px;
+    float: left;
+    &__user {
+        height: 120px;
+        width: 220px;
+        background-color: #253141;
+        position: relative;
+        padding: 0px 50px 0px 30px;
+        border-bottom : solid 1px;
+        border-color:$BorderColor;
+
+        &--content {
+            height: 50px;
+            width: 250px;
+            line-height: 50px;
+            margin: auto 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+
+            &-name {
+                color: $WhiteColor;
+                font-size: 16px;
+                font-weight: bold;
+                display: inline-block;
+            }
+            &-icon {
+                float:right;
+                font-size: 1.2em;
+                a {color: $WhiteColor;
+                  }
+            }
+        }
+    }
+
+
+    &__groups {
+        height: calc(100vh - 120px);
+        background-color: #2f3e51;
+        position: relative;
+        padding: 0px 20px;
+        a {color: $WhiteColor;
+          text-decoration: none;
+        }
+        &__group{
+            padding: 5px 0px;
+
+            &__name {
+                font-size: 15px;
+                padding: 20px 0px 5px 0px;
+
+            }
+            &__message {
+                font-size: 11px;
+                padding: 0px 0px 40px 0px;
+            }
+        }
+    }
+}
+

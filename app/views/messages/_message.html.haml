@@ -1,0 +1,10 @@
+.main__body__messages__message{ "data-id": message.id}
+  .main__body__messages__message__username
+    = message.user.name
+  .main__body__messages__message__date
+    = message.created_at
+  .main__body__messages__message__content
+    - if message.content.present?
+      %p.lower__message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower__message__image' if message.image.present?

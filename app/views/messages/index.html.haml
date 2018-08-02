@@ -1,0 +1,25 @@
+= render 'devise/shared/side_bar'
+.main
+  .main__header
+    .main__header--group
+      = @group.name
+      = link_to edit_group_path(@group) do
+        .main__header--group-edit
+          edit
+    .main__header--members
+      member:
+      - @group.users.each do |person|
+        = person.name
+      / - は表示しない =は表示する
+  .main__body
+    .messages
+      = render @messages
+
+  .main__footer
+    .main__footer__form
+      = form_for [@group, @message], html: {id: 'new_message'} do |f|
+        = f.text_field :content, class: 'main__footer__form__textfield', placeholder: 'type a message'
+        = f.label :image, class: 'main__footer__form__label' do
+          = fa_icon 'picture-o', class: 'main__footer__form__label__icon'
+          = f.file_field :image, class: 'main__footer__form__label__hidden'
+        = f.submit 'Send', class: 'main__footer__form__input'
