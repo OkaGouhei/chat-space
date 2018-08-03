@@ -3,3 +3,7 @@ config/secrets.yml
 public/uploads/tmp/1533216521-45177-0001-1788/IMG_2210.JPG
 
 *.JPG
+
+log/capistrano.log
+
+log/development.log
