@@ -1,3 +1,4 @@
+$(document).on('turbolinks:load', function() {
 $(function(){
   var search_list = $("#user-search-result");
 
@@ -61,3 +62,4 @@ $(function(){
        $(this).parent().remove();
    });
 });
+})
