@@ -9,3 +9,5 @@ log/capistrano.log
 log/development.log
 
 tmp/pids/server.pid
+
+*.cache
