@@ -11,20 +11,27 @@ $(function(){
                 </div>`
     search_list.append(html);
   }
+    function appendNoUser(user){
+    var html =
+        `<div class='chat-group-user clearfix'>${user}</div>`
+        $("#user-search-result").append(html)
+    }
 
   $('#user-search-field').on('keyup', function(){
-    var input = $(this).val();
-    if (input!=""){
+    var input = $("#user-search-field").val();
+    if (input == ""){
+      $("#user-search-result").empty();
+    }
+    else{
       $.ajax({
         type: 'GET',
         url: '/users',
         data: { keyword: input },
         dataType: 'json'
       })
-
       .done(function(users) {
-        $(".chat-group-form__input").empty();
-          if (users.length != 0) {
+        $("#user-search-result").empty();
+          if (users.length !== 0) {
             users.forEach(function(user){
               appendUser(user);
             });
@@ -33,7 +40,6 @@ $(function(){
             appendNoUser("一致するユーザーはいません。");
           }
         })
-
       .fail(function() {
          alert('ユーザーの検索に失敗しました。');
       });
